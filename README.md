@@ -39,7 +39,6 @@ rm steamcmd_linux.tar.gz
 
 ```bash
 mkdir -p ~/.klei/DoNotStarveTogether/
-
 ```
 
 ## Copy files to server
@@ -63,13 +62,23 @@ cd ~/
 ./run_dedicated_servers.sh CLUSTER_NAME
 ```
 
+It's recommended to run the command above under a terminal multiplexer such as `screen`.
+
+Using screen, create a new session with `screen -S dst`.
+
+Where `dst` is a name that you could change to anything.
+
+To detach, use `Ctrl+A, D`.
+
+To reattach, `screen -r dst`.
+
 ### Setup Mods
 
 ```bash
 mv dedicated_server_mods_setup.lua ~/dontstarvetogether_dedicated_server/mods/
 ```
 
-The template only enable several mods. To enable more mods, update the modoverrides.lua.
+The template only enable several mods. To install/uninstalll mods, update `dedicated_server_mods_setup.lua`. To enable/disable mods, update the `modoverrides.lua` in both Master and Caves.
 
 ```bash
 vi ~/dontstarvetogether_dedicated_server/mods/dedicated_server_mods_setup.lua
